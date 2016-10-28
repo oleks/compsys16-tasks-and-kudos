@@ -4,11 +4,14 @@ introduktion til KUDOS.
 ** Plan
 
   * 10-12
-    * ~clone(2)~ (strace?)
+    * Systemkald og strace
+    * ~clone(2)~
     * Makefiles
     * Scheduling: FIFO, SJF, RR. (MLFQ?)
 
   * 13-15
     * Linker scripts
     * KUDOS workflow
-    * Simple
+    * KUDOS overblik
+    * Systemkald i KUDOS
+    * Tilføj en ny modul i KUDOS
