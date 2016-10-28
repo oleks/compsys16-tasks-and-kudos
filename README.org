@@ -14,4 +14,4 @@ introduktion til KUDOS.
     * KUDOS workflow
     * KUDOS overblik
     * Systemkald i KUDOS
-    * Tilføj en ny modul i KUDOS
+    * Tilføj et nyt modul i KUDOS
