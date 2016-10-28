@@ -1,3 +1,6 @@
+Noter, dias, og kode til forelæsningen i CompSys om tråde og processer, samt
+introduktion til KUDOS.
+
 ** Plan
 
   * 10-12
