@@ -1,0 +1,11 @@
+** Plan
+
+  * 10-12
+    * ~clone(2)~ (strace?)
+    * Makefiles
+    * Scheduling: FIFO, SJF, RR. (MLFQ?)
+
+  * 13-15
+    * Linker scripts
+    * KUDOS workflow
+    * Simple
