@@ -1,0 +1,16 @@
+\begin{frame}
+
+\frametitle{Userland and Kernel Mode}
+
+\begin{itemize}
+
+\item Exception handlers (e.g., handling system calls) run in kernel mode.
+
+\item When an exception occurs, the processor enters kernel mode.
+
+\item When returning from an exception, the family of special \texttt{irq}
+instructions will return the processor into user mode.
+
+\end{itemize}
+
+\end{frame}
