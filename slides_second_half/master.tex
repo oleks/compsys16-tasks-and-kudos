@@ -1,0 +1,44 @@
+\documentclass[xcolor=table]{beamer}
+\usepackage{listings}
+
+\input{header}
+
+\setbeamerfont{title}{size=\LARGE}
+
+\addtobeamertemplate{title page}{%
+  \begin{textblock}{20}(11.5,-0.5)%
+    \includegraphics[height=1in]{figures/white-logo}%
+  \end{textblock}%
+}
+
+\def\kudos{\texttt{KUDOS}}
+
+\title{Linker-scripts and \kudos{}}
+\subtitle{CompSys 2016}
+\institute{DIKU}
+\author{Oleks \& Nicklas}
+\date{November 2, 2016}
+
+\begin{document}
+
+\renewcommand*{\arraystretch}{1.2}
+
+\begin{frame} \titlepage \end{frame}
+
+\input{overview}
+
+\input{ld}
+
+\input{kudos}
+% 
+% \input{syscalls}
+% 
+% \input{mode}
+% 
+% \input{libc}
+% 
+% \input{man}
+% 
+% \input{strace}
+
+\end{document}

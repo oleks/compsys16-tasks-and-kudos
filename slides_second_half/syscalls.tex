@@ -1,0 +1,72 @@
+\begin{frame}
+
+\frametitle{System Calls (1/3)}
+
+\vspace{\fill}
+
+\begin{center}
+
+An operating system mediates the users' access \\ to underlying physical
+devices.
+
+\end{center}
+
+\begin{center}
+
+User programs issue system calls \\ to get things done.
+
+\end{center}
+
+\vspace{\fill}
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+
+\frametitle{System Calls (2/3): What's To a System Call?}
+
+\vspace{\fill}
+
+A system call is:
+
+\begin{itemize}
+
+\item A system call number (i.e., handler has a switch case).
+
+\item A handful of register-resident arguments.
+
+\item A register-resident result (more outcomes on next slide).
+
+\end{itemize}
+
+Examples:
+
+\begin{lstlisting}
+#include <unistd.h>
+ssize_t read(int fd, void *buf, size_t count);
+ssize_t write(int fd, const void *buf, size_t count);
+\end{lstlisting}
+
+\vspace{\fill}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{System Calls (3/3): More Examples}
+
+\vspace{\fill}
+
+What could possibly happen?
+
+\begin{itemize}
+
+\item Anything!
+
+\end{itemize}
+
+\vspace{\fill}
+
+\end{frame}

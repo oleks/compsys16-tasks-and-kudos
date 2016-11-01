@@ -1,0 +1,60 @@
+\begin{frame}
+    \frametitle{\kudos{} workflow}
+
+    \begin{center}
+        \kudos{} source overview
+    \end{center}
+    \vspace{\fill}
+
+    \begin{itemize}
+        \item \textbf{kudos} The \kudos{} kernel code
+            \begin{itemize}
+                \item \textbf{drivers} Driver subsystem
+                \item \textbf{fs} File-system subsystem
+                \item \textbf{init} Initialization (aka. boot) subsystem
+                \item \textbf{kernel} Core elements subsystem
+                \item \textbf{lib} Helper functions subsystem
+                \item \textbf{util} Utility to create TFS disk images
+                \item \textbf{vm} Virtual memory subsystem
+            \end{itemize}
+        \item \textbf{userland} Userland programs for \kudos{}
+            \begin{enumerate}
+                \item \textbf{halt.c} Calls the halt sys-call
+            \end{enumerate}
+        \item \textbf{run\_qemu.sh} Runs \kudos{}
+    \end{itemize}
+
+    \vspace{\fill}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\kudos{} workflow}
+
+    \begin{center}
+        Tools
+    \end{center}
+    \vspace{\fill}
+
+    \begin{itemize}
+        \item \textbf{Qemu} Virtual machine
+        \item \textbf{grub-mkrescue/xorriso} Create a bootable ISO file
+        \item \textbf{kudos/utils/tfstool} Create tfs (trivial filesystem) image, and transfer userland programs to the disk image
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Running \kudos{}}
+
+\vspace{\fill}
+\begin{center}
+    When using ssh and the VirtualBox image
+\end{center}
+\begin{itemize}
+    \item \textbf{Linux and Mac users} Connect to ssh with \lstinline{ssh archimedes@localhost -p 1337 -X}
+    \item \textbf{Windows users} Start Xming before connecting with Putty, and remember to enable X-forward in Putty
+\end{itemize}
+
+\vspace{\fill}
+
+\end{frame}
