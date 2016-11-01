@@ -2,14 +2,24 @@
 
 \frametitle{Userland and Kernel Mode}
 
+\vspace{\fill}
+
+\begin{center}
+
+Exception handlers (e.g., for system calls) run in kernel mode.
+
+\end{center}
+
+\vspace{\fill}
+
 \begin{itemize}
 
-\item Exception handlers (e.g., handling system calls) run in kernel mode.
+\item Processor enters kernel mode when an exception occurs.
 
-\item When an exception occurs, the processor enters kernel mode.
+\item Careful. Anything can be done in kernel mode.
 
-\item When returning from an exception, the family of special \texttt{irq}
-instructions will return the processor into user mode.
+\item The \texttt{iret}- family of instructions will \emph{atomically} return
+the processor to userland and continue with the user program.
 
 \end{itemize}
 
