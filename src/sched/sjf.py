@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import common
 
 max_ticks = 1000
 
@@ -29,14 +30,26 @@ for task in text:
 # Python's sort is stable
 tasks = sorted(tasks)
 
+arrival = { t.name : t.arr for t in tasks }
+firstrun = { }
+completion = { }
+
 ticks = 0
 seq = []
 while len(tasks) > 0 and ticks < max_ticks:
   t = tasks.pop(0)
-  if t.arr < ticks:
+  if not t.name in firstrun:
+    firstrun[t.name] = ticks
+
+  if ticks < t.arr:
     ticks = t.arr
   seq.append("{}{}".format(t.name, t.exe))
   ticks += t.exe
 
+  completion[t.name] = ticks
+
 print(" ".join(seq))
 print("Time elapsed: {}".format(ticks))
+
+common.show_turnaround(completion, arrival)
+common.show_response(firstrun, arrival)

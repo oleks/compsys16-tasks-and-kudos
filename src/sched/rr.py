@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys, bisect
+import common
 
 max_ticks = 1000
 timeslice = 5
@@ -30,10 +31,17 @@ for task in text:
 # Python's sort is stable
 tasks = sorted(tasks)
 
+arrival = { t.name : t.arr for t in tasks }
+firstrun = { }
+completion = { }
+
 ticks = 0
 seq = []
 while len(tasks) > 0 and ticks < max_ticks:
   t = tasks.pop(0)
+  if not t.name in firstrun:
+    firstrun[t.name] = ticks
+
   if t.arr < ticks:
     ticks = t.arr
   exe = min(t.exe, timeslice)
@@ -43,6 +51,11 @@ while len(tasks) > 0 and ticks < max_ticks:
   t.arr += exe
   if t.exe != 0:
     bisect.insort_right(tasks, t)
+  else:
+    completion[t.name] = ticks
 
 print(" ".join(seq))
 print("Time elapsed: {}".format(ticks))
+
+common.show_turnaround(completion, arrival)
+common.show_response(firstrun, arrival)
