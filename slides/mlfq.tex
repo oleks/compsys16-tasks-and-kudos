@@ -6,6 +6,10 @@
 
 \item Maintain multiple RR queues with varying time slices.
 
+\item So there are multiple ``levels'' where a task may be.
+
+\item Lower levels have shorter timeslices and higher levels.
+
 %\item Short-
 
 \end{itemize}
@@ -21,18 +25,22 @@
 \item [Rule 1] If $\text{Level}(A) < \text{Level}(B)$, $A$ runs ($B$ doesn't).
 
 \item [Rule 2] If $\text{Level}(A) = \text{Level}(B)$, $A$ \& $B$ run in RR. \\
-The time-slice on level $i$ is $i\times\text{``your exam number''}$ number of
-ticks.
 
-\item [Rule 3] When a job enters the system, it is placed in queue 1.
+\item [Rule 3] When a job enters the system, it is placed in the lowest queue.
 
 \item [Rule 4] Once a job uses up its time-slice in the RR-scheme (see Rule 2),
-it is moved down one level in the queue, unless the job finished, or it is
-already on the bottom-most queue.
+it is moved one level up, unless the job finished, or it is already on the
+highest queue.
 
-\item [Rule 5] After a time period of 1000 ticks, move all the jobs in the
-system to the topmost queue.
+\item [Rule 5] After a time period of $x$ ticks, move all the jobs in the
+system to the lowest queue.
 
 \end{description}
+
+\begin{center}
+
+(Demo left as an exercise.)
+
+\end{center}
 
 \end{frame}
