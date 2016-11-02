@@ -1,0 +1,38 @@
+\begin{frame}
+
+\frametitle{Multi-Level Feedback Queues (MLFQ): Rules}
+
+\begin{itemize}
+
+\item Maintain multiple RR queues with varying time slices.
+
+%\item Short-
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Multi-Level Feedback Queues (MLFQ): Rules}
+
+\begin{description}
+
+\item [Rule 1] If $\text{Level}(A) < \text{Level}(B)$, $A$ runs ($B$ doesn't).
+
+\item [Rule 2] If $\text{Level}(A) = \text{Level}(B)$, $A$ \& $B$ run in RR. \\
+The time-slice on level $i$ is $i\times\text{``your exam number''}$ number of
+ticks.
+
+\item [Rule 3] When a job enters the system, it is placed in queue 1.
+
+\item [Rule 4] Once a job uses up its time-slice in the RR-scheme (see Rule 2),
+it is moved down one level in the queue, unless the job finished, or it is
+already on the bottom-most queue.
+
+\item [Rule 5] After a time period of 1000 ticks, move all the jobs in the
+system to the topmost queue.
+
+\end{description}
+
+\end{frame}

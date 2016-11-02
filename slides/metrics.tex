@@ -1,0 +1,113 @@
+\begin{frame}
+
+\frametitle{Scheduling Metrics}
+
+\begin{center}
+
+We need measures for comparing scheduling policies.
+
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Average Turnaround Time}
+
+$$\frac{\sum_{i=1}^n T^i_{\text{turnaround}}}{n}$$
+
+where,
+
+$$T^i_{\text{turnaround}} = T^i_{\text{completion}} - T^i_{\text{arrival}}$$
+
+\begin{itemize}
+
+% \item Due to assumption (2), we can assume $T_{\text{arrival}} = 0$.
+
+\item This is a \emph{performance} metric, not a \emph{fairness} metric.
+
+\begin{itemize}
+
+\item We can manipulate averages at the cost of fairness.
+
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Average Response Time}
+
+$$\frac{\sum_{i=1}^n T^i_{\text{response}}}{n}$$
+
+where,
+
+$$T^i_{\text{response}} = T^i_{\text{firstrun}} - T^i_{\text{arrival}}$$
+
+\begin{itemize}
+
+% \item Due to assumption (2), we can assume $T_{\text{arrival}} = 0$.
+
+\item This is \emph{still} not a fairness metric.
+
+\begin{itemize}
+
+\item We can manipulate averages at the cost of fairness.
+
+\end{itemize}
+
+\item This is an \emph{interactive} performance metric.
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Summing Up: Points of Measure}
+
+\vspace{\fill}
+
+Task parameters indpendent of the scheduler:
+
+\begin{itemize}
+
+\item[1.] The task arrival time, $T_{\text{arrival}}$.
+
+\item[2.] The task execution time, $T_{\text{execution}}$.
+
+\end{itemize}
+
+The following depends on the scheduler:
+
+\begin{itemize}
+
+\item[3.] The time a task is first run, $T_{\text{firstrun}}$.
+
+\item[4.] The time a task completes, $T_{\text{completion}}$.
+
+\end{itemize}
+
+\vspace{\fill}
+
+\begin{center}
+
+(1) and (2), can play a varying role in (3) and (4), \\ depending on the
+scheduling policy.
+
+\end{center}
+
+% \vspace{\fill}
+
+% \begin{itemize}
+
+% \item Due to assumption (2), we can assume $T_{\text{arrival}} = 0$.
+
+% \end{itemize}
+
+\end{frame}

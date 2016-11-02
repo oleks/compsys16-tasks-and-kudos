@@ -1,0 +1,101 @@
+\begin{frame}
+
+\begin{center}
+
+\Huge \textbf{Scheduling}
+
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Scheduling Policies}
+
+\vspace{\fill}
+
+\begin{center}
+
+% \item An operating system provides the illusion that a task runs alone on a
+% given processor. This is achieved by occasionally switching between which
+% tasks are run.
+
+In the context of one processing core, \\ if more than one task is ready to
+run, \\ which should get to go first?
+
+\end{center}
+
+\vspace{\fill}
+
+\end{frame}
+
+\input{metrics}
+
+\begin{frame}
+
+\frametitle{Simplifying Assumptions}
+
+Let us begin with some unrealistic assumptions:
+
+\begin{itemize}
+
+\item[1.] Each task runs for the same, fixed amount of time.
+
+\item[2.] All tasks arrive at the same time.
+
+\item[3.] Once started, a task runs to completion.
+
+\item[4.] All tasks only use the CPU (i.e., perform no I/O)
+
+% \item[5.] The wall-clock running time of each task is known.
+
+\end{itemize}
+
+\vspace{\fill}
+
+Some formal consequences (more along the way):
+
+\begin{itemize}
+
+\item[a.] There is a fixed number of $n$ tasks in the system.
+
+\end{itemize}
+
+\end{frame}
+
+
+\input{fifo}
+
+\input{sjf}
+
+\begin{frame}
+
+\frametitle{Preemptive Scheduling}
+
+\vspace{\fill}
+
+\begin{center}
+
+A non-preemptive scheduler runs a task to completion.
+
+\end{center}
+
+\begin{center}
+
+A preemptive scheduler interrupts a task \\ whenever there are better things to
+do.
+
+\end{center}
+
+\vspace{\fill}
+
+\end{frame}
+
+\input{stcf}
+
+\input{rr}
+
+\input{io}
+
+\input{mlfq}
