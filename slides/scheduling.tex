@@ -11,17 +11,22 @@
 
 \begin{frame}
 
-\frametitle{Scheduling}
+\frametitle{Scheduling Policies}
 
-\begin{itemize}
+\vspace{\fill}
+
+\begin{center}
 
 % \item An operating system provides the illusion that a task runs alone on a
 % given processor. This is achieved by occasionally switching between which
 % tasks are run.
 
-\item If two (or more) tasks are ready run at the same time, which should we run?
+In the context of one processing core, \\ if more than one task is ready to
+run, \\ which should get to go first?
 
-\end{itemize}
+\end{center}
+
+\vspace{\fill}
 
 \end{frame}
 
@@ -48,7 +53,7 @@ Let us begin with some unrealistic assumptions:
 
 \vspace{\fill}
 
-Some formal consequences:
+Some formal consequences (more along the way):
 
 \begin{itemize}
 
@@ -76,7 +81,7 @@ We need measures for comparing scheduling policies.
 
 \frametitle{Average Turnaround Time}
 
-$${\sum_{i=1}^n T^i_{\text{turnaround}}} \over n$$
+$$\frac{\sum_{i=1}^n T^i_{\text{turnaround}}}{n}$$
 
 where,
 
@@ -84,12 +89,83 @@ $$T^i_{\text{turnaround}} = T^i_{\text{completion}} - T^i_{\text{arrival}}$$
 
 \begin{itemize}
 
-\item Due to assumption (2), we can assume $T_{\text{arrival}} = 0$.
+% \item Due to assumption (2), we can assume $T_{\text{arrival}} = 0$.
 
 \item This is a \emph{performance} metric, not a \emph{fairness} metric.
 
-\item It is easy to manipulate averages at the cost of fairness.
+\begin{itemize}
+
+\item We can manipulate averages at the cost of fairness.
+
+\end{itemize}
 
 \end{itemize}
 
 \end{frame}
+
+
+\begin{frame}
+
+\frametitle{Average Response Time}
+
+$$\frac{\sum_{i=1}^n T^i_{\text{response}}}{n}$$
+
+where,
+
+$$T^i_{\text{response}} = T^i_{\text{firstrun}} - T^i_{\text{arrival}}$$
+
+\begin{itemize}
+
+% \item Due to assumption (2), we can assume $T_{\text{arrival}} = 0$.
+
+\item This is \emph{still} not a fairness metric.
+
+\begin{itemize}
+
+\item We can manipulate averages at the cost of fairness.
+
+\end{itemize}
+
+\item This is an \emph{interactive} performance metric.
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Summing Up: Points of Measure}
+
+For each scheduling policy, for each task, we want:
+
+\begin{itemize}
+
+\item[1.] The task arrival time, $T_{\text{arrival}}$.
+
+\item[2.] The time a task is first run, $T_{\text{firstrun}}$.
+
+\item[3.] The time a task completes, $T_{\text{completion}}$.
+
+\end{itemize}
+
+% \vspace{\fill}
+
+% \begin{itemize}
+
+% \item Due to assumption (2), we can assume $T_{\text{arrival}} = 0$.
+
+% \end{itemize}
+
+\end{frame}
+
+
+\input{fifo}
+
+\input{sjf}
+
+\input{stcf}
+
+\input{rr}
+
+\input{mlfq}
