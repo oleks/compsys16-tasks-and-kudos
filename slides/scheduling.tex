@@ -1,0 +1,95 @@
+\begin{frame}
+
+\begin{center}
+
+\Huge \textbf{Scheduling}
+
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Scheduling}
+
+\begin{itemize}
+
+% \item An operating system provides the illusion that a task runs alone on a
+% given processor. This is achieved by occasionally switching between which
+% tasks are run.
+
+\item If two (or more) tasks are ready run at the same time, which should we run?
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Simplifying Assumptions}
+
+Let us begin with some unrealistic assumptions:
+
+\begin{itemize}
+
+\item[1.] Each task runs for the same, fixed amount of time.
+
+\item[2.] All task arrive at the same time.
+
+\item[3.] Once started, a task runs to completion.
+
+\item[4.] All tasks only use the CPU (i.e., perform no I/O)
+
+% \item[5.] The wall-clock running time of each task is known.
+
+\end{itemize}
+
+\vspace{\fill}
+
+Some formal consequences:
+
+\begin{itemize}
+
+\item[a.] There is a fixed number of $n$ tasks in the system.
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Scheduling Metrics}
+
+\begin{center}
+
+We need measures for comparing scheduling policies.
+
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Average Turnaround Time}
+
+$${\sum_{i=1}^n T^i_{\text{turnaround}}} \over n$$
+
+where,
+
+$$T^i_{\text{turnaround}} = T^i_{\text{completion}} - T^i_{\text{arrival}}$$
+
+\begin{itemize}
+
+\item Due to assumption (2), we can assume $T_{\text{arrival}} = 0$.
+
+\item This is a \emph{performance} metric, not a \emph{fairness} metric.
+
+\item It is easy to manipulate averages at the cost of fairness.
+
+\end{itemize}
+
+\end{frame}
