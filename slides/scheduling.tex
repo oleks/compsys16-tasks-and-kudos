@@ -30,6 +30,7 @@ run, \\ which should get to go first?
 
 \end{frame}
 
+\input{metrics}
 
 \begin{frame}
 
@@ -41,7 +42,7 @@ Let us begin with some unrealistic assumptions:
 
 \item[1.] Each task runs for the same, fixed amount of time.
 
-\item[2.] All task arrive at the same time.
+\item[2.] All tasks arrive at the same time.
 
 \item[3.] Once started, a task runs to completion.
 
@@ -64,108 +65,37 @@ Some formal consequences (more along the way):
 \end{frame}
 
 
-\begin{frame}
-
-\frametitle{Scheduling Metrics}
-
-\begin{center}
-
-We need measures for comparing scheduling policies.
-
-\end{center}
-
-\end{frame}
-
-
-\begin{frame}
-
-\frametitle{Average Turnaround Time}
-
-$$\frac{\sum_{i=1}^n T^i_{\text{turnaround}}}{n}$$
-
-where,
-
-$$T^i_{\text{turnaround}} = T^i_{\text{completion}} - T^i_{\text{arrival}}$$
-
-\begin{itemize}
-
-% \item Due to assumption (2), we can assume $T_{\text{arrival}} = 0$.
-
-\item This is a \emph{performance} metric, not a \emph{fairness} metric.
-
-\begin{itemize}
-
-\item We can manipulate averages at the cost of fairness.
-
-\end{itemize}
-
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}
-
-\frametitle{Average Response Time}
-
-$$\frac{\sum_{i=1}^n T^i_{\text{response}}}{n}$$
-
-where,
-
-$$T^i_{\text{response}} = T^i_{\text{firstrun}} - T^i_{\text{arrival}}$$
-
-\begin{itemize}
-
-% \item Due to assumption (2), we can assume $T_{\text{arrival}} = 0$.
-
-\item This is \emph{still} not a fairness metric.
-
-\begin{itemize}
-
-\item We can manipulate averages at the cost of fairness.
-
-\end{itemize}
-
-\item This is an \emph{interactive} performance metric.
-
-\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}
-
-\frametitle{Summing Up: Points of Measure}
-
-For each scheduling policy, for each task, we want:
-
-\begin{itemize}
-
-\item[1.] The task arrival time, $T_{\text{arrival}}$.
-
-\item[2.] The time a task is first run, $T_{\text{firstrun}}$.
-
-\item[3.] The time a task completes, $T_{\text{completion}}$.
-
-\end{itemize}
-
-% \vspace{\fill}
-
-% \begin{itemize}
-
-% \item Due to assumption (2), we can assume $T_{\text{arrival}} = 0$.
-
-% \end{itemize}
-
-\end{frame}
-
-
 \input{fifo}
 
 \input{sjf}
 
+\begin{frame}
+
+\frametitle{Preemptive Scheduling}
+
+\vspace{\fill}
+
+\begin{center}
+
+A non-preemptive scheduler runs a task to completion.
+
+\end{center}
+
+\begin{center}
+
+A preemptive scheduler interrupts a task \\ whenever there are better things to
+do.
+
+\end{center}
+
+\vspace{\fill}
+
+\end{frame}
+
 \input{stcf}
 
 \input{rr}
+
+\input{io}
 
 \input{mlfq}
